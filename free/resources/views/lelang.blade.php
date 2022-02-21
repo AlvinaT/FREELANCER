@@ -27,11 +27,8 @@
                         <th scope="col">No</th>
                         <th scope="col">Judul</th>
                         <th scope="col">Jenis</th>
-                        <th scope="col">Detail</th>
-                        <th scope="col">Tanggal Mulai</th>
-                        <th scope="col">Tanggal Selesai</th>
+                        <th scope="col">Perusahaan</th>
                         <th scope="col">Durasi</th>
-                        <th scope="col">Keunggulan</th>
                         <th scope="col">Status</th>
                       </tr>
                     </thead>
@@ -42,11 +39,19 @@
                               {{-- <td>{{ $proyek->firstItem()+$no }}</td> --}}
                               <td>{{ $data->judul }}</td>
                               <td>{{ $data->jenis }}</td>
-                              <td>{{ $data->detail }}</td>
-                              <td>{{ $data->tgl_mulai }}</td>
-                              <td>{{ $data->tgl_selesai }}</td>
-                              <td>{{ $data->durasi }}</td>
-                              <td>{{ $data->keunggulan }}</td>
+                              <td>{{ $data->user->nama_perusahaan }}</td>
+                              <td>
+                                <?php
+                                $tgl1 = strtotime($data->tgl_mulai); 
+                                $tgl2 = strtotime($data->tgl_selesai); 
+
+                                $jarak = $tgl2 - $tgl1;
+
+                                $hari = $jarak / 60 / 60 / 24;
+                                echo $hari." hari";
+                                ?>
+                              </td>
+                              {{-- <td>{{ $data->keunggulan }}</td> --}}
                               <td>
                                 @if($data->deal==1)
                                 <b style="color:green">On Proses</b>

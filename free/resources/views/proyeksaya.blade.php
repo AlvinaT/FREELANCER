@@ -25,13 +25,15 @@
                         <th scope="col">No</th>
                         <th scope="col">Judul</th>
                         <th scope="col">Jenis</th>
-                        <th scope="col">Detail</th>
+                        {{-- <th scope="col">Detail</th> --}}
                         <th scope="col">Tanggal Mulai</th>
                         <th scope="col">Tanggal Selesai</th>
-                        <th scope="col">Harga</th>
-                        <th scope="col">Durasi</th>
-                        <th scope="col">Keunggulan</th>
+                        <th scope="col">Salary</th>
+                        {{-- <th scope="col">Durasi</th> --}}
+                        {{-- <th scope="col">Keunggulan</th> --}}
+                        <th scope="col">Status</th>
                         <th scope="col">Aksi</th>
+                        
                       </tr>
                     </thead>
           
@@ -41,20 +43,17 @@
                               {{-- <td>{{ $proyek->firstItem()+$no }}</td> --}}
                               <td>{{ $data->judul }}</td>
                               <td>{{ $data->jenis }}</td>
-                              <td>{{ $data->detail }}</td>
+                              {{-- <td>{{ $data->detail }}</td> --}}
                               <td>{{ $data->tgl_mulai }}</td>
                               <td>{{ $data->tgl_selesai }}</td>
                               <td>{{ $data->harga }}</td>
-                              <td>{{ $data->durasi }}</td>
-                              <td>{{ $data->keunggulan }}</td>
                              <td>
                               @if($data->deal==1)
                               <b style="color:green"> Deal</b>
                               @else
                               <b style="color:red">  No Approval Yet</b>
                               @endif
-                             </td>
-                             <td>
+                            
                                 @if($data->deal==1)
                                 <a href="{{ url('/proyeksaya/'.$data->id)}}" class="btn btn-icon btn-primary"></i>Approved</a>
                                 @else

@@ -16,8 +16,8 @@ use Storage;
 class ProyekController extends Controller
 {
     public function index(){
-        // $proyek = DB::table('proyek')->get();
-        $proyek= Proyek::all();
+        $proyek = DB::table('proyek')->orderBy('id','DESC')->get();
+        // $proyek= Proyek::all();
         return view('proyek.data',compact('proyek'));
         // return view('proyek.data');
     }
@@ -34,7 +34,7 @@ class ProyekController extends Controller
     public function saya(){
         // $proyek = DB::table('proyek')->get();
         $user= auth()->user()->id;
-        $proyek = Proyek::where('user',$user)->get();
+        $proyek = Proyek::where('user_id',$user)->orderBy('id','DESC')->get();
         return view('proyeksaya',compact('proyek'));
         // return view('proyek.data');
     }
@@ -135,6 +135,10 @@ class ProyekController extends Controller
             return view('proyek.detail',compact('proyek'));
 
             // return view('proyek.data');
+        }
+        public function det($id){
+            $proyek = Proyek::findOrFail(decrypt($id));
+            return view('freelancer.detail',compact('proyek'));
         }
 
         public function edit($id){

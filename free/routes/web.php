@@ -25,9 +25,11 @@ Route::get('home', function () {
 
     Route::get('/lelang','ProyekController@lelang');
 
+    Route::get('/perusahaan/profil/{id}','PerusahaanController@detail');
    
     Route::get('/freelancer/edit/{id}','FreelancerController@edit');
     Route::get('/freelancer/proyek','ProyekController@proyekfree');
+    Route::get('/freelancer/detail/{id}','ProyekController@det');
 
     Route::get('/proyek','ProyekController@index');
     Route::get('/proyek/tambah','ProyekController@tambah');

@@ -24,6 +24,8 @@ class FreelancerController extends Controller
         // return view('freelancer.data', ['freelancer' => $freelancer]);
     }
 
+    
+
         public function edit($id){
             try {
                 $proyek = Proyek::findOrFail(decrypt($id));

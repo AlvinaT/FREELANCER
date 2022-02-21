@@ -20,7 +20,6 @@
                     <thead>
                       <tr>
                       <th scope="col">No</th>
-                        <th scope="col">Nama</th>
                         <th scope="col">Nama Perusahaan</th>
                         <th scope="col">Alamat</th>
                         <th scope="col">Detail</th>
@@ -31,7 +30,6 @@
                             <tr>
                               <td>{{ $no+1 }}</td>
                               {{-- <td>{{ $proyek->firstItem()+$no }}</td> --}}
-                              <td>{{ $data->name }}</td>
                               <td>{{ $data->nama_perusahaan }}</td>
                               <td>{{ $data->alamat }}</td>
                               <td>{{ $data->detail }}</td>

@@ -18,8 +18,8 @@
         <div class="author-box-job">{{ $proyek->tgl_mulai }} - {{ $proyek->tgl_selesai }}</div>
         <div class="author-box-description">
           <p>{{ $proyek->detail }}</p>
-          <a>Dokumen pendukung disini</a><br/>
-          <a class="btn btn-icon btn-info" href="{{ url('/proyek/dl/' . ($proyek->file)) }}">Download</a><br/><br/>
+          {{-- <a>Dokumen pendukung disini</a><br/> --}}
+          <a class="btn btn-icon " href="{{ url('/proyek/dl/' . ($proyek->file)) }}">Dokumen pendukung disini</a><br/><br/>
           <h1 class="far fa-money-bill-alt">   Salary : {{ $proyek->harga }}</h1>
         </div>
         
@@ -27,6 +27,7 @@
           
         <div class="w-100 d-sm-none"></div>
         <div class="float-right mt-sm-0 mt-3">
+                <a href="{{ url('/freelancer/edit/' . encrypt($proyek->id)) }}"  class="btn btn-icon btn-info"></>Tawar</a>
           <a href="{{url('proyek/')}}" class="btn">Back <i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
